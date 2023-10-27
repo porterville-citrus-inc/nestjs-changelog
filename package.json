@@ -2,7 +2,12 @@
   "name": "nestjs-changelog",
   "version": "1.0.20",
   "description": "",
+  "files": [
+    "dist",
+    "index.*"
+  ],
   "scripts": {
+    "prepare": "npm run build",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "test": "mocha lib/spec/change.spec.ts"
