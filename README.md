@@ -1,15 +1,17 @@
 # NestJS ChangeLog
 
-[![CircleCI](https://circleci.com/gh/Shift3/nestjs-changelog/tree/master.svg?style=svg)](https://circleci.com/gh/Shift3/nestjs-changelog/tree/master)
-
 NestJS ChangeLog is a change tracker for NestJS. It is similar to [PaperTrail](https://github.com/paper-trail-gem/paper_trail) in that it hooks into entity events and saves the changes. It stores a ChangeLog that you can view or even revert to previous versions of a tracked entity.
 
 ## Getting Started
 
-First install the package.
+First, install the package.
 
 ```bash
-npm install --save nestjs-changelog
+npm install "https://github.com/porterville-citrus-inc/nestjs-changelog" # Latest on main
+
+# ---- OR ----
+
+npm install "https://github.com/porterville-citrus-inc/nestjs-changelog#semver:^1.0.0" # Specific version
 ```
 
 Wrap your typeorm `ConnectionOptions` with our helper function that adds the necessary entity and subscriber.
