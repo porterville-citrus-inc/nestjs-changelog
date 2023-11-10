@@ -3,9 +3,8 @@
   "version": "1.0.21",
   "description": "",
   "scripts": {
-    "preinstall": "ls -la && npm run build",
-    "install": "ls -la",
-    "postinstall": "ls -la",
+    "install": "npm run build",
+    "postinstall": "rimraf .circleci lib .g* .n* .m* tsconfig.*",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "test": "mocha lib/spec/change.spec.ts"
