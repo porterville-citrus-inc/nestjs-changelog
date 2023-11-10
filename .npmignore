@@ -1,3 +1,1 @@
-# ignore source dir for publishing
-lib
-package-lock.json
+# ignore nothing so the build can run on install.
