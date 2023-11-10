@@ -2,11 +2,6 @@
   "name": "nestjs-changelog",
   "version": "1.0.21",
   "description": "",
-  "files": [
-    "dist",
-    "index.*",
-    "tsconfig.*"
-  ],
   "scripts": {
     "preinstall": "ls -la && npm run build",
     "install": "ls -la",
