@@ -4,7 +4,8 @@
   "description": "",
   "files": [
     "dist",
-    "index.*"
+    "index.*",
+    "tsconfig.*"
   ],
   "scripts": {
     "preinstall": "ls -la && npm run build",
