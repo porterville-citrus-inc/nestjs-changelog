@@ -7,7 +7,9 @@
     "index.*"
   ],
   "scripts": {
-    "install": "npm run build",
+    "preinstall": "ls -la && npm run build",
+    "install": "ls -la",
+    "postinstall": "ls -la",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "test": "mocha lib/spec/change.spec.ts"
