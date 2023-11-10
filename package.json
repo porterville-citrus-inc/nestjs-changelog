@@ -7,10 +7,12 @@
     "index.*"
   ],
   "scripts": {
-    "prepare": "npm run build",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
-    "test": "mocha lib/spec/change.spec.ts"
+    "test": "mocha lib/spec/change.spec.ts",
+    "prepack": "npm run build",
+    "prerelease": "npm version $npm_config_next_ver && npm pack",
+    "release": "echo gh release create $npm_package_version *.tgz"
   },
   "author": "",
   "license": "MIT",
