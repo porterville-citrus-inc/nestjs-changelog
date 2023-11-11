@@ -4,14 +4,10 @@ NestJS ChangeLog is a change tracker for NestJS. It is similar to [PaperTrail](h
 
 ## Getting Started
 
-First, install the package.
+First, install the package using the link to a [release] tarball:
 
 ```bash
-npm install "https://github.com/porterville-citrus-inc/nestjs-changelog" # Latest on main
-
-# ---- OR ----
-
-npm install "https://github.com/porterville-citrus-inc/nestjs-changelog#semver:^1.0.0" # Specific version
+npm install "https://github.com/porterville-citrus-inc/nestjs-changelog/archive/refs/tags/nestjs-changelog-1.0.22.tgz"
 ```
 
 Wrap your typeorm `ConnectionOptions` with our helper function that adds the necessary entity and subscriber.
@@ -62,6 +58,8 @@ import { ChangeModule } from 'nestjs-changelog';
     ]
 })
 ```
+
+[release]: https://github.com/porterville-citrus-inc/nestjs-changelog/releases
 
 ## Tracking Changes
 
@@ -216,4 +214,31 @@ const entity = await connection.manager.findOne(SomeEntity, 1);
 await connection.manager.delete(SomeEntity, { id: 1 });
 // manually create an entry
 await changeRepository.createChangeEntry(entity, ChangeAction.DELETE);
+```
+
+## Creating a new release
+
+This package is intended for use directly from Github, using NPM's ability to
+add a dependency from a given URL. To create a new release for use this way, use
+one of the included NPM scripts.
+
+Note: this requires the `gh` CLI installed and authenticated. You will also need
+to configure the default remote repo: `gh repo set-default`
+
+To release incrementing the version:
+
+```sh
+npm run release --next-ver=minor # Or any string accepted by `npm version`.
+```
+
+Shortcut to release incrementing the patch version:
+
+```sh
+npm run rel:patch
+```
+
+To release without incrementing the version (useful when testing):
+
+```sh
+npm run release
 ```
