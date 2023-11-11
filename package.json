@@ -12,7 +12,9 @@
     "test": "mocha lib/spec/change.spec.ts",
     "prepack": "npm run build",
     "prerelease": "npm version $npm_config_next_ver && npm pack",
-    "release": "gh release create v$(npm run env | sed -En 's/^npm_package_version=(.+$)/\\1/p') *.tgz"
+    "release": "gh release create v$(npm run env | sed -En 's/^npm_package_version=(.+$)/\\1/p') *.tgz",
+    "rel:patch": "npm run release --next-ver=patch",
+    "postrelease": "rimraf *.tgz"
   },
   "author": "",
   "license": "MIT",
