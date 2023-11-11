@@ -12,7 +12,7 @@
     "test": "mocha lib/spec/change.spec.ts",
     "prepack": "npm run build",
     "prerelease": "npm version $npm_config_next_ver && npm pack",
-    "release": "echo gh release create $npm_package_version *.tgz"
+    "release": "gh release create v$(npm run env | sed -En 's/^npm_package_version=(.+$)/\\1/p') *.tgz"
   },
   "author": "",
   "license": "MIT",
